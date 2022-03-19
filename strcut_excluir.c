@@ -17,28 +17,28 @@ void excluir_aluno(struct cadastro pessoa[2]);
 int main(){
 
   //chamada da struct em vetor
-	struct cadastro pessoa[2];
+  struct cadastro pessoa[2];
   int op;
 
   //menu do programa
   do{
-    printf("digite uma opcao:\n");
-    printf("[1]-cadastrar\n");
-		printf("[2]-exibir:\n");
-		printf("[3]-excluir:\n");
-    scanf("%d", &op);//le a opcao desejada
+    	printf("digite uma opcao:\n");
+    	printf("[1]-cadastrar\n");
+	printf("[2]-exibir:\n");
+	printf("[3]-excluir:\n");
+    	scanf("%d", &op);//le a opcao desejada
 
-    //chamada das funcoes
-    switch(op){
-      case 1:
-        cadastrar_aluno(pessoa);
-      break;
-      case 2:
-        exibir_aluno(pessoa);
-      break;
-      case 3:
-        excluir_aluno(pessoa);
-      break;
+    	//chamada das funcoes
+    	switch(op){
+      	case 1:
+        	cadastrar_aluno(pessoa);
+      	break;
+      	case 2:
+        	exibir_aluno(pessoa);
+      	break;
+      	case 3:
+        	excluir_aluno(pessoa);
+      	break;
     }
     
   }while(op<=3);
@@ -50,7 +50,7 @@ int main(){
 int cadastrar_aluno(struct cadastro pessoa[2]){
 
   for(int i=0; i<2; i++){
-  printf("Digite sua matricula:\n");
+ 	printf("Digite sua matricula:\n");
 	scanf("%d", &pessoa[i].mat);
 	
 	printf("Digite seu nome:\n");
@@ -73,12 +73,12 @@ void exibir_aluno(struct cadastro pessoa[2]){
 
   printf("----Dados dos alunos:----\n");
   for(int i=0; i<2; i++){
-    printf("\n");
-	  printf("\tMatricula: %d\n", pessoa[i].mat);
-	  printf("\tNome: %s\n", pessoa[i].nome);
-	  printf("\tPrimeira nota: %.1f\n", pessoa[i].nota1);
+   	printf("\n");
+	printf("\tMatricula: %d\n", pessoa[i].mat);
+	printf("\tNome: %s\n", pessoa[i].nome);
+	printf("\tPrimeira nota: %.1f\n", pessoa[i].nota1);
   	printf("\tSegunda nota: %.1f\n", pessoa[i].nota2);
-	  printf("\tTerceira nota: %.1f\n", pessoa[i].nota3);
+	printf("\tTerceira nota: %.1f\n", pessoa[i].nota3);
   }
 }
 
@@ -86,7 +86,7 @@ void exibir_aluno(struct cadastro pessoa[2]){
 void excluir_aluno(struct cadastro pessoa[2]){
   char nome_aluno[20];//variavel para escolher o aluno a ser exclcuido
 
-  printf("digite o nome do aluno para excluir:\n");
+  printf("Digite o nome do aluno para excluir:\n");
   scanf(" %[^\n]", nome_aluno);//pegando o nome do aluno
 
   for(int i=0; i<=2; i++){
