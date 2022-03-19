@@ -87,12 +87,11 @@ void excluir_aluno(struct cadastro pessoa[2]){
   char nome_aluno[20];//variavel para escolher o aluno a ser exclcuido
 
   printf("digite o nome do aluno para excluir:\n");
-  scanf(" %[^\n]", nome_aluno);
+  scanf(" %[^\n]", nome_aluno);//pegando o nome do aluno
 
   for(int i=0; i<=2; i++){
-    if(strcmp(pessoa[i].nome,nome_aluno)){//funcao para comparar as strings
-     //for(int j=i; j<=2; j++){
-        pessoa[i] = pessoa[i+1];//exclusao
+    if(strcmp(pessoa[i].nome,nome_aluno)==0){//funcao para comparar as strings
+        pessoa[i] = pessoa[i-1];//exclusao
       }
   }
  }
