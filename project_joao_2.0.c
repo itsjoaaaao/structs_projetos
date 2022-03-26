@@ -89,6 +89,7 @@ int cadastrar_aluno(Cadastro *ppessoa){
 	
 		  printf("Digite a primeira nota:\n");
 		  scanf("%f", &ppessoa->notas.nota3);
+		ppessoa++;
   	}
   	
   	system("cls");
@@ -105,6 +106,7 @@ void exibir_aluno(Cadastro *ppessoa){
 	  printf("\tPrimeira nota: %.1f\n", ppessoa->notas.nota1);
   	printf("\tSegunda nota: %.1f\n", ppessoa->notas.nota2);
 	  printf("\tTerceira nota: %.1f\n", ppessoa->notas.nota3);
+	  ppessoa++;
   }
   
 }
@@ -152,7 +154,7 @@ void excluir_aluno(Cadastro *ppessoa){
     	assim se a condição for verdadeira 
 		entra na estrutura if e faz a excluão
     */
-    if(strcmp(ppessoa->nome,nome_aluno)==0){//funcao para comparar as strings
+    if(strcmp(ppessoa[i].nome,nome_aluno)==0){//funcao para comparar as strings
         ppessoa[i] = ppessoa[i-2];//exclusao
       }
   }
