@@ -34,6 +34,14 @@ int main(){
   int op;
 
   ppessoa = pessoa;//apontando para o endereço de memoria da struct vetor principal
+	
+	//alocando a memoria 
+	ppessoa = (Cadastro *) malloc (2*(sizeof(Cadastro)));
+	
+	if(ppessoa==NULL){
+		printf("ERRO na memória!!\n");
+		exit(1);
+	}
 
   //menu do programa
   do{
@@ -67,6 +75,8 @@ int main(){
     }
     
   }while(op<=4);
+	
+	free(ppessoa);
 	
 	return 0;
 }
